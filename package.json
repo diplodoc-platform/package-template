@@ -1,0 +1,22 @@
+{
+  "name": "@diplodoc/package-template",
+  "version": "1.0.0",
+  "description": "Template package for Diplodoc platform development",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diplodoc-platform/package-template.git"
+  },
+  "private": true,
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diplodoc-platform/diplodoc/issues"
+  },
+  "homepage": "https://diplodoc.com/",
+  "devDependencies": {
+    "@diplodoc/eslint-config": "^1.0.3",
+    "@diplodoc/prettier-config": "^1.0.0",
+    "@diplodoc/tsconfig": "^1.0.2"
+  }
+}
