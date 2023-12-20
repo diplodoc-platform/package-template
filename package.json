@@ -23,8 +23,8 @@
     "test": "exit 0"
   },
   "devDependencies": {
-    "@diplodoc/eslint-config": "^1.0.3",
-    "@diplodoc/prettier-config": "^1.0.0",
+    "@diplodoc/eslint-config": "^2.0.0",
+    "@diplodoc/prettier-config": "^2.0.0",
     "@diplodoc/tsconfig": "^1.0.2",
     "esbuild": "^0.19.9",
     "typescript": "^5.3.3"
