@@ -4,6 +4,9 @@
   "description": "Template package for Diplodoc platform development",
   "main": "index.js",
   "homepage": "https://diplodoc.com/",
+  "engines": {
+    "npm": ">=11.5.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/diplodoc-platform/package-template.git"
