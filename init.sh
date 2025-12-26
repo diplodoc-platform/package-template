@@ -36,7 +36,11 @@ npx @diplodoc/lint init
 echo "Installing dependencies..."
 npm install
 
+# Remove template files
 rm init.sh README-template.md
+
+# Note: GitHub templates and workflows will remain as examples
+# Update them with package-specific information if needed
 
 git remote set-url origin ${ORIGIN/package-template/$NAME}
 git add --all

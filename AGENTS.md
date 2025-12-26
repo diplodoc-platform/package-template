@@ -179,6 +179,26 @@ For E2E tests, consider using Playwright (see `devops/testpack` for examples).
 
 6. **package.json Maintenance**: Periodically check that `package.json` fields (description, repository URL, bugs URL, etc.) are accurate and up-to-date. Verify that dependency versions are current and compatible with the project standards.
 
+## CI/CD
+
+The package includes GitHub Actions workflows:
+
+- **tests.yml**: Runs tests, type checking, linting, and build on multiple platforms
+- **security.yml**: Weekly security audits via npm audit
+- **release.yaml**: Publishes package to npm when a release is created
+
+## GitHub Integration
+
+- **Issue templates**: Bug reports and feature requests (`.github/ISSUE_TEMPLATE/`)
+- **Pull request template**: Standardized PR format (`.github/pull_request_template.md`)
+- **Dependabot**: Automated dependency updates (`.github/dependabot.yml`)
+
+## Documentation Files
+
+- **SECURITY.md**: Security policy and vulnerability reporting
+- **CONTRIBUTING.md**: Contribution guidelines and development workflow
+- **AGENTS.md**: This file - guide for AI coding agents
+
 ## Additional Resources
 
 - Metapackage `.agents/` - Platform-wide agent documentation

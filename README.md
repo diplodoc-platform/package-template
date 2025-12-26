@@ -22,6 +22,11 @@ After initialization, you'll have a fully configured package with:
 - Git hooks via Husky (configured automatically)
 - Build scripts using esbuild
 - Type declarations generation
+- Vitest testing setup with example test
+- GitHub Actions workflows (tests, security, publish)
+- GitHub templates (issue templates, PR template)
+- Dependabot configuration for automated dependency updates
+- SECURITY.md and CONTRIBUTING.md documentation
 
 ## Next Steps
 
@@ -29,7 +34,12 @@ After initialization, you'll have a fully configured package with:
 2. Update `package.json` description and repository URL
 3. Add your code to `src/index.ts`
 4. Configure exports in `package.json` if needed
-5. Add tests (consider using Vitest as recommended in `.agents/style-and-testing.md`)
+5. Add tests (Vitest is already configured with example test)
+6. Update GitHub templates (`.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md`) if needed
+7. Update `SECURITY.md` with your contact email if different
+8. Review and customize `.github/workflows/` if needed
+9. Set up GitHub Secrets for publishing (if applicable):
+   - `NPM_TOKEN` for npm publishing
 
 ## Package Structure
 
@@ -41,15 +51,24 @@ package-name/
 ├── build/                # Build output (generated)
 │   ├── index.js
 │   └── index.d.ts
+├── .github/
+│   ├── ISSUE_TEMPLATE/   # Issue templates
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   ├── workflows/        # CI/CD workflows
+│   │   ├── tests.yml     # Test workflow
+│   │   ├── security.yml  # Security audit
+│   │   └── release.yaml  # Publish to npm
+│   ├── dependabot.yml    # Dependency updates
+│   └── pull_request_template.md
 ├── esbuild/
 │   └── build.mjs         # Build configuration
-├── .github/
-│   └── workflows/
-│       └── tests.yml     # CI/CD workflow
 ├── tsconfig.json         # TypeScript config
 ├── tsconfig.publish.json # TypeScript config for publishing
 ├── vitest.config.mjs     # Vitest configuration
 ├── package.json          # Package configuration
+├── SECURITY.md           # Security policy
+├── CONTRIBUTING.md       # Contribution guidelines
 └── README.md             # Package documentation
 ```
 
