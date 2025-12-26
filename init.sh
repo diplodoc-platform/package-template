@@ -19,6 +19,11 @@ do
     sed -i '' "s/package-template/$NAME/g" $FILE
 done
 
+# Update release-please config with package name
+if [ -f .release-please-config.json ]; then
+    sed -i '' "s/@diplodoc\/package-template/@diplodoc\/$NAME/g" .release-please-config.json
+fi
+
 # Remove template section from AGENTS.md
 if [ -f AGENTS.md ]; then
     # Remove everything from "<!-- TEMPLATE SECTION" to "<!-- END TEMPLATE SECTION -->"
