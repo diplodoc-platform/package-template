@@ -81,12 +81,18 @@ package-name/
 ├── esbuild/
 │   └── build.mjs        # Build configuration (ESM)
 ├── .github/
-│   └── workflows/
-│       └── tests.yml    # CI/CD workflow example
+│   ├── ISSUE_TEMPLATE/  # Issue templates
+│   ├── workflows/       # CI/CD workflows
+│   ├── dependabot.yml   # Dependency updates
+│   └── pull_request_template.md
 ├── tsconfig.json        # TypeScript config (extends @diplodoc/tsconfig)
 ├── tsconfig.publish.json # TypeScript config for publishing
 ├── vitest.config.mjs    # Vitest configuration
+├── .release-please-config.json # Release-please configuration
+├── .release-please-manifest.json # Release-please manifest
 ├── package.json         # Package configuration
+├── SECURITY.md          # Security policy
+├── CONTRIBUTING.md      # Contribution guidelines
 └── README.md            # Package documentation
 ```
 
@@ -185,7 +191,23 @@ The package includes GitHub Actions workflows:
 
 - **tests.yml**: Runs tests, type checking, linting, and build on multiple platforms
 - **security.yml**: Weekly security audits via npm audit
+- **release-please.yml**: Automated versioning and changelog generation based on conventional commits
 - **release.yaml**: Publishes package to npm when a release is created
+
+### Release Process
+
+The package uses **release-please** for automated versioning:
+
+- Analyzes conventional commits to determine version bumps
+- Creates release PRs with updated version and CHANGELOG.md
+- Generates tags in format `v1.0.0`
+- Works with the publish workflow to automatically publish on release creation
+
+**Version Bump Rules**:
+- `feat`: Minor version bump
+- `fix`: Patch version bump
+- Breaking changes: Major version bump
+- `chore`, `docs`, `refactor`: No version bump (unless breaking)
 
 ## GitHub Integration
 

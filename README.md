@@ -23,9 +23,10 @@ After initialization, you'll have a fully configured package with:
 - Build scripts using esbuild
 - Type declarations generation
 - Vitest testing setup with example test
-- GitHub Actions workflows (tests, security, publish)
+- GitHub Actions workflows (tests, security, publish, release-please)
 - GitHub templates (issue templates, PR template)
 - Dependabot configuration for automated dependency updates
+- Release-please for automated versioning and changelog generation
 - SECURITY.md and CONTRIBUTING.md documentation
 
 ## Next Steps
@@ -38,8 +39,12 @@ After initialization, you'll have a fully configured package with:
 6. Update GitHub templates (`.github/ISSUE_TEMPLATE/`, `.github/pull_request_template.md`) if needed
 7. Update `SECURITY.md` with your contact email if different
 8. Review and customize `.github/workflows/` if needed
-9. Set up GitHub Secrets for publishing (if applicable):
+9. Update release-please configuration:
+   - `.release-please-config.json`: Update `package-name` field
+   - `.release-please-manifest.json`: Set initial version
+10. Set up GitHub Secrets for publishing (if applicable):
    - `NPM_TOKEN` for npm publishing
+   - `RELEASE_PLEASE_TOKEN`: Optional, for release-please (uses GITHUB_TOKEN by default)
 
 ## Package Structure
 
