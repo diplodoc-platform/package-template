@@ -10,6 +10,8 @@ const common = {
     sourcemap: true,
     target: target,
     tsconfig: './tsconfig.json',
+    platform: 'node',
+    packages: 'external',
 };
 
 esbuild.build({
