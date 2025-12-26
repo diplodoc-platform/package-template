@@ -155,22 +155,6 @@ The package uses **Vitest** for testing (recommended framework for Diplodoc plat
 
 For E2E tests, consider using Playwright (see `devops/testpack` for examples).
 
-## Dependencies
-
-### Runtime Dependencies
-
-<!-- TODO: List runtime dependencies -->
-
-### Dev Dependencies
-
-- `@diplodoc/tsconfig` - TypeScript configuration
-- `@diplodoc/lint` - Linting and formatting (added via `lint init`)
-- `@vitest/coverage-v8` - Code coverage for Vitest
-- `esbuild` - Fast JavaScript bundler
-- `npm-run-all` - Run npm scripts in parallel
-- `typescript` - TypeScript compiler
-- `vitest` - Testing framework (recommended for Diplodoc platform)
-
 ## Important Notes
 
 1. **Metapackage vs Standalone**: This package can be used both as part of the metapackage (workspace mode) and as a standalone npm package. All scripts must work in both contexts.
