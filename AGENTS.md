@@ -196,18 +196,35 @@ The package includes GitHub Actions workflows:
 
 ### Release Process
 
-The package uses **release-please** for automated versioning:
+The package uses **release-please** for automated versioning and publishing:
 
-- Analyzes conventional commits to determine version bumps
-- Creates release PRs with updated version and CHANGELOG.md
-- Generates tags in format `v1.0.0`
-- Works with the publish workflow to automatically publish on release creation
+1. **Release-please workflow** (`.github/workflows/release-please.yml`):
+   - Runs on push to `master`
+   - Analyzes conventional commits to determine version bumps
+   - Creates release PRs with updated version and CHANGELOG.md
+   - When release PR is merged, creates a GitHub release with tag `v1.0.0`
+
+2. **Publish workflow** (`.github/workflows/release.yaml`):
+   - Triggers automatically when a release is created
+   - Runs tests, type checking, and build
+   - Verifies package contents and version matching
+   - Publishes to npm with provenance
+
+**Workflow**:
+1. Developer makes conventional commits (e.g., `feat: add new feature`)
+2. Release-please creates/updates release PR with version bump and changelog
+3. Release PR is reviewed and merged
+4. Release-please creates GitHub release
+5. Publish workflow automatically publishes to npm
 
 **Version Bump Rules**:
 - `feat`: Minor version bump
 - `fix`: Patch version bump
-- Breaking changes: Major version bump
+- Breaking changes (e.g., `feat!: breaking change`): Major version bump
 - `chore`, `docs`, `refactor`: No version bump (unless breaking)
+
+**Required Secrets**:
+- `NPM_TOKEN`: npm authentication token for publishing
 
 ## GitHub Integration
 

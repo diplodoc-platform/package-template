@@ -43,8 +43,20 @@ After initialization, you'll have a fully configured package with:
    - `.release-please-config.json`: Update `package-name` field
    - `.release-please-manifest.json`: Set initial version
 10. Set up GitHub Secrets for publishing (if applicable):
-   - `NPM_TOKEN` for npm publishing
-   - `RELEASE_PLEASE_TOKEN`: Optional, for release-please (uses GITHUB_TOKEN by default)
+   - `NPM_TOKEN`: Required for npm publishing (get from npmjs.com)
+   - `RELEASE_PLEASE_TOKEN`: Optional, for release-please (uses `GITHUB_TOKEN` by default)
+
+## Release Process
+
+The package uses **release-please** for automated releases:
+
+1. Make conventional commits (e.g., `feat: add feature`, `fix: bug fix`)
+2. Release-please automatically creates/updates a release PR
+3. Review and merge the release PR
+4. Release-please creates a GitHub release
+5. The publish workflow automatically publishes to npm
+
+**Note**: Ensure `NPM_TOKEN` secret is configured in GitHub repository settings for automatic publishing.
 
 ## Package Structure
 
