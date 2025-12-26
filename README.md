@@ -36,18 +36,38 @@ After initialization, you'll have a fully configured package with:
 ```
 package-name/
 ├── src/
-│   └── index.ts          # Main source file
+│   ├── index.ts          # Main source file
+│   └── index.test.ts     # Example test file
+├── build/                # Build output (generated)
+│   ├── index.js
+│   └── index.d.ts
 ├── esbuild/
-│   └── build.js         # Build configuration
-├── tsconfig.json        # TypeScript config (extends @diplodoc/tsconfig)
-├── package.json         # Package configuration
-└── README.md            # Package documentation
+│   └── build.mjs         # Build configuration
+├── .github/
+│   └── workflows/
+│       └── tests.yml     # CI/CD workflow
+├── tsconfig.json         # TypeScript config
+├── tsconfig.publish.json # TypeScript config for publishing
+├── vitest.config.mjs     # Vitest configuration
+├── package.json          # Package configuration
+└── README.md             # Package documentation
 ```
 
 ## Development Workflow
 
 1. Make changes in `src/`
-2. Run `npm run build` to build
-3. Run `npm run lint` to check code quality
-4. Run `npm run typecheck` to verify types
-5. Commit changes (pre-commit hook will run linting automatically)
+2. Run `npm test` to run tests
+3. Run `npm run build` to build
+4. Run `npm run lint` to check code quality
+5. Run `npm run typecheck` to verify types
+6. Commit changes (pre-commit hook will run linting automatically)
+
+## CI/CD
+
+The package includes a GitHub Actions workflow (`.github/workflows/tests.yml`) that:
+- Runs tests on multiple platforms (Linux, macOS, Windows)
+- Runs type checking
+- Runs linting
+- Builds the package
+
+The workflow runs on push to `master` and on pull requests.

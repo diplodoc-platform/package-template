@@ -9,4 +9,5 @@
 
 # libraries
 npm-debug.log
+*.log
 

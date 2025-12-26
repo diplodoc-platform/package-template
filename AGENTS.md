@@ -73,10 +73,19 @@ npm run lint:fix
 ```
 package-name/
 ├── src/
-│   └── index.ts          # Main source file
+│   ├── index.ts          # Main source file
+│   └── index.test.ts     # Example test file
+├── build/                # Build output directory (generated)
+│   ├── index.js         # Bundled JavaScript
+│   └── index.d.ts       # TypeScript declarations
 ├── esbuild/
-│   └── build.js         # Build configuration
+│   └── build.mjs        # Build configuration (ESM)
+├── .github/
+│   └── workflows/
+│       └── tests.yml    # CI/CD workflow example
 ├── tsconfig.json        # TypeScript config (extends @diplodoc/tsconfig)
+├── tsconfig.publish.json # TypeScript config for publishing
+├── vitest.config.mjs    # Vitest configuration
 ├── package.json         # Package configuration
 └── README.md            # Package documentation
 ```
@@ -86,12 +95,17 @@ package-name/
 The package uses **esbuild** for fast builds:
 
 - Entry point: `src/index.ts`
-- Output: `index.js` (bundled, minified)
-- Type declarations: `index.d.ts` (generated via `tsc`)
+- Output directory: `build/`
+- Output files:
+  - `build/index.js` - Bundled JavaScript (with sourcemaps)
+  - `build/index.d.ts` - TypeScript declarations (generated via `tsc`)
 
 Build process:
-1. `build:js` - Bundles and minifies JavaScript
-2. `build:declarations` - Generates TypeScript declarations
+1. `build:js` - Bundles JavaScript using esbuild (ESM module)
+2. `build:declarations` - Generates TypeScript declarations using `tsconfig.publish.json`
+3. `build:clean` - Removes build directory (optional, run before build if needed)
+
+The build script uses ESM (`build.mjs`) and outputs to `build/` directory for cleaner project structure.
 
 ## TypeScript Configuration
 
@@ -120,12 +134,20 @@ Configuration files are automatically managed by `@diplodoc/lint`:
 
 ## Testing
 
-<!-- TODO: Add testing information if tests are added -->
+The package uses **Vitest** for testing (recommended framework for Diplodoc platform):
 
-Currently, the package has a placeholder test script. Consider adding tests using:
-- **Vitest** (recommended for new packages)
-- Jest (if migrating from existing setup)
-- Playwright (for E2E tests)
+- Configuration: `vitest.config.mjs`
+- Test files: `src/**/*.test.ts` or `src/**/*.spec.ts`
+- Coverage: Enabled via `@vitest/coverage-v8`
+
+**Test Commands**:
+- `npm test` - Run tests once
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
+
+**Example Test**: See `src/index.test.ts` for a basic test example.
+
+For E2E tests, consider using Playwright (see `devops/testpack` for examples).
 
 ## Dependencies
 
@@ -137,9 +159,11 @@ Currently, the package has a placeholder test script. Consider adding tests usin
 
 - `@diplodoc/tsconfig` - TypeScript configuration
 - `@diplodoc/lint` - Linting and formatting (added via `lint init`)
+- `@vitest/coverage-v8` - Code coverage for Vitest
 - `esbuild` - Fast JavaScript bundler
 - `npm-run-all` - Run npm scripts in parallel
 - `typescript` - TypeScript compiler
+- `vitest` - Testing framework (recommended for Diplodoc platform)
 
 ## Important Notes
 
@@ -147,11 +171,13 @@ Currently, the package has a placeholder test script. Consider adding tests usin
 
 2. **Linting**: Linting infrastructure is managed by `@diplodoc/lint`. Run `npx @diplodoc/lint update` to sync configurations.
 
-3. **Build Output**: The build outputs `index.js` and `index.d.ts` in the package root. Update `package.json` `files` field if adding more output files.
+3. **Build Output**: The build outputs files to the `build/` directory. Update `package.json` `files` field if adding more output files.
 
-4. **Type Exports**: Ensure `package.json` has correct `types` field pointing to declaration files.
+4. **Type Exports**: Ensure `package.json` has correct `types` field pointing to declaration files in `build/` directory.
 
 5. **Documentation**: Update this file and `README.md` with package-specific information after initialization.
+
+6. **package.json Maintenance**: Periodically check that `package.json` fields (description, repository URL, bugs URL, etc.) are accurate and up-to-date. Verify that dependency versions are current and compatible with the project standards.
 
 ## Additional Resources
 

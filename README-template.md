@@ -27,7 +27,28 @@ npm install
 ### Build
 
 ```bash
+# Build the package
 npm run build
+
+# Clean build directory
+npm run build:clean && npm run build
+```
+
+Build outputs to `build/` directory:
+- `build/index.js` - Bundled JavaScript
+- `build/index.d.ts` - TypeScript declarations
+
+### Testing
+
+```bash
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
 ```
 
 ### Linting
