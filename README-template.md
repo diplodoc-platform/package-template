@@ -67,8 +67,4 @@ npm run lint:fix
 
 ```bash
 npm run typecheck
-```
-
-## License
-
-MIT
+```## LicenseMIT

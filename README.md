@@ -14,9 +14,7 @@ The `init.sh` script will:
 - Initialize linting with `@diplodoc/lint init` (adds lint scripts, configs, and Git hooks)
 - Install dependencies
 - Update git remote URL
-- Remove template files (`init.sh`, `README-template.md`)
-
-After initialization, you'll have a fully configured package with:
+- Remove template files (`init.sh`, `README-template.md`)After initialization, you'll have a fully configured package with:
 - TypeScript configuration extending `@diplodoc/tsconfig`
 - ESLint, Prettier, and Stylelint configured via `@diplodoc/lint` (added automatically)
 - Git hooks via Husky (configured automatically)
@@ -58,9 +56,7 @@ The package uses **release-please** for automated releases:
 
 **Note**: Ensure `NPM_TOKEN` secret is configured in GitHub repository settings for automatic publishing.
 
-## Package Structure
-
-```
+## Package Structure```
 package-name/
 ├── src/
 │   ├── index.ts          # Main source file
