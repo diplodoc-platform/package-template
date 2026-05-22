@@ -3,7 +3,6 @@
 .history
 .env
 .DS_Store
-
 node_modules
 /lib
 /dist
@@ -11,7 +10,8 @@ node_modules
 /cache
 /coverage
 /external
-
-# libraries
-npm-debug.log
-*.log
+.lintstagedrc.js
+.eslintrc.js
+.prettierrc.js
+.stylelintrc.js
+esbuild/**/*.mjs

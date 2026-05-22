@@ -1,4 +1,5 @@
-import {describe, it, expect} from 'vitest';
+import {describe, expect, it} from 'vitest';
+
 import {example, greet} from './index';
 
 describe('example', () => {
@@ -16,9 +17,3 @@ describe('greet', () => {
         expect(greet('')).toBe('Hello, !');
     });
 });
-
-
-
-
-
-
