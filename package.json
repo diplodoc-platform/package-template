@@ -40,7 +40,7 @@
     "@diplodoc/infra": "^2.0.1",
     "@diplodoc/tsconfig": "^1.0.2",
     "@vitest/coverage-v8": "^2.0.0",
-    "typescript": "^5.5.3",
+    "typescript": "^5.9.3",
     "vitest": "^2.0.0"
   }
 }
