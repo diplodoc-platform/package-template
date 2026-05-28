@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-import {build} from 'esbuild';
+import {build} from '@diplodoc/infra/esbuild';
 
 import tsConfig from '../tsconfig.json' with {type: 'json'};
 
 const outDir = 'build';
 
-/** @type {import('esbuild').BuildOptions}*/
+/** @type {import('@diplodoc/infra/esbuild').BuildOptions} */
 const common = {
     bundle: true,
     sourcemap: true,
@@ -21,9 +21,3 @@ build({
     entryPoints: ['src/index.ts'],
     outfile: outDir + '/index.js',
 });
-
-
-
-
-
-
