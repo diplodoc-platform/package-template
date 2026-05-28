@@ -1,6 +1,6 @@
 {
   "name": "@diplodoc/package-template",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Template package for Diplodoc platform development",
   "main": "build/index.js",
   "types": "build/index.d.ts",
