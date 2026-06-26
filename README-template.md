@@ -1,3 +1,14 @@
+**english** | [русский](https://github.com/diplodoc-platform/package-template/blob/master/README.ru.md)
+
+---
+
+[![NPM version](https://img.shields.io/npm/v/@diplodoc/package-template.svg?style=flat)](https://www.npmjs.org/package/@diplodoc/package-template)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=diplodoc-platform_package-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=diplodoc-platform_package-template)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=diplodoc-platform_package-template&metric=coverage)](https://sonarcloud.io/summary/new_code?id=diplodoc-platform_package-template)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=diplodoc-platform_package-template&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=diplodoc-platform_package-template)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=diplodoc-platform_package-template&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=diplodoc-platform_package-template)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=diplodoc-platform_package-template&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=diplodoc-platform_package-template)
+
 # @diplodoc/package-template
 
 [![NPM version](https://img.shields.io/npm/v/@diplodoc/package-template.svg?style=flat)](https://www.npmjs.org/package/@diplodoc/package-template)
