@@ -14,7 +14,7 @@ package-specific section will remain.
 `@diplodoc/package-template` is the starting point for creating new packages
 on the Diplodoc platform. It ships with:
 
-- TypeScript configuration extending `@diplodoc/tsconfig`
+- TypeScript configuration extending `@diplodoc/infra/tsconfig.json`
 - Build setup using `@diplodoc/infra/esbuild` (esbuild is re-exported from `@diplodoc/infra`)
 - Vitest testing setup with an example test
 - A full set of canonical `@diplodoc/infra` scaffolding files **committed
@@ -134,7 +134,7 @@ package-name/
 │   └── build.mjs         # Build configuration (uses @diplodoc/infra/esbuild)
 ├── .github/              # GitHub config (workflows etc. managed by @diplodoc/infra)
 ├── .husky/               # Git hooks (managed by @diplodoc/infra)
-├── tsconfig.json         # TypeScript config (extends @diplodoc/tsconfig)
+├── tsconfig.json         # TypeScript config (extends @diplodoc/infra/tsconfig.json)
 ├── tsconfig.publish.json # TypeScript config for publishing
 ├── vitest.config.mjs     # Vitest configuration
 ├── package.json
@@ -167,7 +167,7 @@ esbuild version across all packages.
 
 ## TypeScript Configuration
 
-Extends `@diplodoc/tsconfig` with:
+Extends `@diplodoc/infra/tsconfig.json` with:
 
 - Target: ES2022
 - Module: ES2022
@@ -295,4 +295,4 @@ The package uses **release-please** for automated versioning and publishing:
 
 - Metapackage `.agents/` — platform-wide agent documentation
 - [`@diplodoc/infra`](https://github.com/diplodoc-platform/infra) — linting, scaffolding, and distribution
-- `@diplodoc/tsconfig` — TypeScript configuration reference
+- `@diplodoc/infra/tsconfig.json` — shared TypeScript configuration (extended via `@diplodoc/infra`)

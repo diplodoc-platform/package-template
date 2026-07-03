@@ -48,7 +48,7 @@ The `init.sh` script will:
 
 After initialization, you'll have a fully configured package with:
 
-- TypeScript configuration extending `@diplodoc/tsconfig`
+- TypeScript configuration extending `@diplodoc/infra/tsconfig.json`
 - ESLint, Prettier, and Stylelint configured via `@diplodoc/infra` (with
   `.eslintrc.js` extending `@diplodoc/infra/eslint-config`)
 - Git hooks via Husky
@@ -129,7 +129,7 @@ package-name/
 │   ├── dependabot.yml            # managed by @diplodoc/infra
 │   └── pull_request_template.md  # custom
 ├── .husky/                       # managed by @diplodoc/infra
-├── tsconfig.json                 # TypeScript config (extends @diplodoc/tsconfig)
+├── tsconfig.json                 # TypeScript config (extends @diplodoc/infra/tsconfig.json)
 ├── tsconfig.publish.json         # TypeScript config for declarations
 ├── vitest.config.mjs             # Vitest configuration
 ├── .release-please-config.json   # managed by @diplodoc/infra
